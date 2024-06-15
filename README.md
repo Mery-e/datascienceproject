@@ -3,14 +3,15 @@
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Installation and Usage](#installation and Usage)
-3. [Data Collection](#data-collection)
-4. [Data Analysis](#data-analysis)
-5. [Clustering](#clustering)
-6. [Comparing Linguistic Processing Libraries](#comparing-linguistic-processing-libraries)
-7. [Named Entity Recognition (NER)](#named-entity-recognition-ner)
-8. [Requirements](#requirements)
-9. [Contributing](#contributing)
+2. [Installation](#Installation)
+3. [Usage](#Usage)
+4. [Data Collection](#data-collection)
+5. [Data Analysis](#data-analysis)
+6. [Clustering](#clustering)
+7. [Comparing Linguistic Processing Libraries](#comparing-linguistic-processing-libraries)
+8. [Named Entity Recognition (NER)](#named-entity-recognition-ner)
+9. [Requirements](#requirements)
+10. [Contributing](#contributing)
 
 
 ## Overview
