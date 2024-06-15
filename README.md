@@ -3,7 +3,7 @@
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Installation] and [Usage](#installation)
+2. [Installation and Usage](#installation and Usage)
 3. [Data Collection](#data-collection)
 4. [Data Analysis](#data-analysis)
 5. [Clustering](#clustering)
