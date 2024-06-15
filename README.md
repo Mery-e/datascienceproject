@@ -106,7 +106,6 @@ To install the required dependencies, run the following command:
 pip install -r requirements.txt
 
 ## Requirements
-
 - Python 3.x
 - pandas
 - scikit-learn
@@ -118,5 +117,4 @@ pip install -r requirements.txt
 - numpy
 
 ### Contributions
-
 Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on GitHub.
