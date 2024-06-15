@@ -1,23 +1,115 @@
-# Title: NLP Comparison and Clustering
-This project aims to compare the performance of two Natural Language Processing (NLP) packages, Stanza and SpaCy, with a focus on Named Entity Recognition (NER). The project also uses K-means for clustering. The goal is to provide a comprehensive analysis of NER capabilities and to explore patterns in the data.
+# NLP Comparison and Clustering
+
+## Overview
+
+This project aims to compare the performance of two Natural Language Processing (NLP) packages, Stanza and SpaCy, with a focus on Named Entity Recognition (NER). The project also incorporates clustering techniques using K-means and visualizes the resulting clusters with Principal Component Analysis (PCA). These methods are applied to provide a comprehensive analysis of NER capabilities and to explore underlying patterns in the data.
 
 ## Table of Contents
 
-1. [Installation](#installation)
-2. [Usage](#usage)
-    - [Loading the Notebook](#loading-the-notebook)
-    - [Data Preprocessing](#data-preprocessing)
-    - [Named Entity Recognition](#named-entity-recognition)
-    - [Clustering and Visualization](#clustering-and-visualization)
-    - [Metrics and Evaluation](#metrics-and-evaluation)
-3. [Important Notes](#important-notes)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Loading the Notebook](#loading-the-notebook)
+  - [Data Preprocessing](#data-preprocessing)
+  - [Named Entity Recognition](#named-entity-recognition)
+  - [Clustering and Visualization](#clustering-and-visualization)
+  - [Metrics and Evaluation](#metrics-and-evaluation)
+- [Important Notes](#important-notes)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Requirements
+
+- Python 3.x
+- pandas
+- scikit-learn
+- matplotlib
+- seaborn
+- stanza
+- spacy
+- numpy
+- notebook
+
+## Installation
+
+1. Clone the repository to your local machine:
+
+    ```bash
+    git clone https://github.com/Mery-e/datascienceproject/edit/main/README.md
+        ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd stanza_and_spacy_comparison
+    ```
+
+3. Create and activate a virtual environment (optional but recommended):
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+4. Install the required dependencies using pip:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+5. Ensure you have Jupyter Notebook installed:
+
+    ```bash
+    pip install notebook
+    ```
+
+## Usage
+
+### Loading the Notebook
+
+Start Jupyter Notebook:
+
+```bash
+jupyter notebook
+
+Data Preprocessing
+The notebook begins by loading and preprocessing the data.
+
+Named Entity Recognition
+The notebook contains functions to perform Named Entity Recognition (NER) using both SpaCy and Stanza.
+
+Example Usage:
+SpaCy NER:
+import spacy
+
+nlp_spacy = spacy.load('en_core_web_sm')
+
+def spacy_model(doc):
+    doc_spacy = nlp_spacy(doc)
+    spacy_entities = [(ent.text, ent.label_) for ent in doc_spacy.ents]
+    return spacy_entities
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Installation
 
 1. Clone the repository to your local machine.
     ```bash
-    git clone https://github.com/evanpkchapple/stanza_and_spacy_comparison
+    git clone https://github.com/Mery-e/datascienceproject/edit/main/README.md
     ```
 
 2. Install the required packages.
@@ -109,8 +201,6 @@ print("Silhouette Coefficient: %0.3f" % metrics.silhouette_score(X_train_vec, pr
 ```
 
 ## Important Notes
-
-- **Absolute Paths**: Make sure to use absolute paths for all file operations as relative paths may cause issues.
 - **Time-Consuming Operations**: Some operations, particularly those involving large datasets and batch processing, can be time-consuming.
 
 
