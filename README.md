@@ -3,15 +3,15 @@
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [Data Collection](#data-collection)
-5. [Data Analysis](#data-analysis)
-6. [Clustering](#clustering)
-7. [Comparing Linguistic Processing Libraries](#comparing-linguistic-processing-libraries)
-8. [Named Entity Recognition (NER)](#named-entity-recognition-ner)
+2. [Installation] and [Usage](#installation)
+3. [Data Collection](#data-collection)
+4. [Data Analysis](#data-analysis)
+5. [Clustering](#clustering)
+6. [Comparing Linguistic Processing Libraries](#comparing-linguistic-processing-libraries)
+7. [Named Entity Recognition (NER)](#named-entity-recognition-ner)
+8. [Requirements](#requirements)
 9. [Contributing](#contributing)
-10. [Requirements](#requirements)
+
 
 ## Overview
 This project aims to compare the performance of two Natural Language Processing (NLP) packages, Stanza and SpaCy, with a focus on Named Entity Recognition (NER). The project also incorporates clustering techniques using K-means and visualizes the resulting clusters with Principal Component Analysis (PCA). These methods are applied to provide a comprehensive analysis of NER capabilities and to explore underlying patterns in the data.
