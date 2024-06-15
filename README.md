@@ -1,22 +1,109 @@
-# NLP Comparison and Clustering
-
-## Overview
-
-This project aims to compare the performance of two Natural Language Processing (NLP) packages, Stanza and SpaCy, with a focus on Named Entity Recognition (NER). The project also incorporates clustering techniques using K-means and visualizes the resulting clusters with Principal Component Analysis (PCA). These methods are applied to provide a comprehensive analysis of NER capabilities and to explore underlying patterns in the data.
-
+# Data Science Project: Text Comparison and Clustering   
+    
 ## Table of Contents
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Loading the Notebook](#loading-the-notebook)
-  - [Data Preprocessing](#data-preprocessing)
-  - [Named Entity Recognition](#named-entity-recognition)
-  - [Clustering and Visualization](#clustering-and-visualization)
-  - [Metrics and Evaluation](#metrics-and-evaluation)
-- [Important Notes](#important-notes)
-- [Contributing](#contributing)
-- [License](#license)
+1. [Overview](#overview)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Data Collection](#data-collection)
+5. [Data Analysis](#data-analysis)
+6. [Clustering](#clustering)
+7. [Comparing Linguistic Processing Libraries](#comparing-linguistic-processing-libraries)
+8. [Named Entity Recognition (NER)](#named-entity-recognition-ner)
+9. [Contributing](#contributing)
+10. [Requirements](#requirements)
+
+## Overview
+This project aims to compare the performance of two Natural Language Processing (NLP) packages, Stanza and SpaCy, with a focus on Named Entity Recognition (NER). The project also incorporates clustering techniques using K-means and visualizes the resulting clusters with Principal Component Analysis (PCA). These methods are applied to provide a comprehensive analysis of NER capabilities and to explore underlying patterns in the data.
+
+## Part 1: Comparing and Clustering Texts
+
+### Data Collection
+
+- *Biographies Extraction*: 
+  - Implemented a function to extract biographies for Astronauts and Chefs from Wikipedia.
+  - Collected a minimum of 100 biographies per category.
+  
+- *Knowledge Graph Facts*: 
+  - Extracted RDF triples from an open-source knowledge graph (e.g., DBpedia, Wikidata) for each individual.
+  - Limited to 100 facts per person due to storage constraints.
+  
+- *Data Storage*: 
+  - Stored biographies and their categories in a Pandas dataframe.
+  - Saved each biography in a separate text file named *person_category.txt*.
+  - Knowledge graph facts were stored in a JSON file mapped back to each person.
+
+### Data Analysis
+
+#### Text Data Analysis
+
+- *Preprocessing*: 
+  - Segmented biographies into sentences.
+  - Removed stop words and normalized text to lowercase.
+
+- *Statistics and Visualizations*: 
+  - *Vocabulary*: Determined 50 most frequent words and created word clouds for each category.
+  - *Sentences*: Calculated min/max/avg number of sentences per category; created histograms and box plots.
+  - *Tokens*: Analyzed total bi-gram occurrences per category; min/max/avg occurrences per sentence.
+
+#### Graph Data Analysis
+
+- *RDF Properties*: Identified 50 most frequent properties and generated property clouds for each category.
+- *Facts*: Determined min/max/avg number of facts per category; created histograms and box plots.
+
+### Clustering
+
+- *Model Training*: 
+  - Utilized KMeans clustering algorithm separately for text and graph data.
+  - Split data into train and test sets for evaluation.
+
+- *Comparison*: 
+  - Compared clusters predicted using text input vs graph input.
+  - Evaluated using supervised and unsupervised metrics.
+  - Explored different data sizes, features, and clustering algorithms.
+
+---
+
+## Part 2: Comparing Linguistic Processing Libraries
+
+### Named Entity Recognition (NER)
+
+- *Processing*: 
+  - Implemented functions to perform NER using Spacy and Stanza on biographies.
+  - Results stored in a Pandas dataframe or JSON file.
+
+### NER Analysis by Entity Type
+
+- *Comparison*: 
+  - Conducted detailed comparison of NER results between Spacy and Stanza.
+  - Reported statistics on agreement, partial agreement, and disagreement per category and package.
+  - Visualized comparison results.
+
+### NER Verification Against Knowledge Graph
+
+- *Verification*: 
+  - Developed functions to verify predicted NEs against the knowledge graph for each person.
+  - Used regular expressions for matching NEs found in text with RDF entities in associated texts.
+  - Calculated the ratio of confidently predicted NEs found in the knowledge graph.
+  - Explored co-reference resolution techniques for additional insights.
+
+---
+
+## Installation and Usage
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Mery-e/datascienceproject/tree/main
+   cd text-comparison-clustering
+
+2. Install Dependencies
+To install the required dependencies, run the following command:
+
+```bash
+pip install -r requirements.txt
 
 ## Requirements
 
@@ -25,185 +112,11 @@ This project aims to compare the performance of two Natural Language Processing 
 - scikit-learn
 - matplotlib
 - seaborn
+- keras
+- trankit
 - stanza
-- spacy
 - numpy
-- notebook
 
-## Installation
+### Contributions
 
-1. Clone the repository to your local machine:
-
-    ```bash
-    git clone https://github.com/Mery-e/datascienceproject/edit/main/README.md
-        ```
-
-2. Navigate to the project directory:
-
-    ```bash
-    cd stanza_and_spacy_comparison
-    ```
-
-3. Create and activate a virtual environment (optional but recommended):
-
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
-
-4. Install the required dependencies using pip:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-5. Ensure you have Jupyter Notebook installed:
-
-    ```bash
-    pip install notebook
-    ```
-
-## Usage
-
-### Loading the Notebook
-
-Start Jupyter Notebook:
-
-```bash
-jupyter notebook
-
-Data Preprocessing
-The notebook begins by loading and preprocessing the data.
-
-Named Entity Recognition
-The notebook contains functions to perform Named Entity Recognition (NER) using both SpaCy and Stanza.
-
-Example Usage:
-SpaCy NER:
-import spacy
-
-nlp_spacy = spacy.load('en_core_web_sm')
-
-def spacy_model(doc):
-    doc_spacy = nlp_spacy(doc)
-    spacy_entities = [(ent.text, ent.label_) for ent in doc_spacy.ents]
-    return spacy_entities
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Installation
-
-1. Clone the repository to your local machine.
-    ```bash
-    git clone https://github.com/Mery-e/datascienceproject/edit/main/README.md
-    ```
-
-2. Install the required packages.
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. Ensure you have Jupyter Notebook installed.
-    ```bash
-    pip install notebook
-    ```
-
-## Usage
-
-### Loading the Notebook
-
-1. Start Jupyter Notebook.
-    ```bash
-    jupyter notebook
-    ```
-
-2. Open the `compare.ipynb` notebook.
-
-### Data Preprocessing
-
-The notebook begins by loading and preprocessing the data. Ensure that all paths provided are absolute paths, as relative paths may not work correctly.
-
-### Named Entity Recognition
-
-The notebook contains functions to perform Named Entity Recognition (NER) using both SpaCy and Stanza. The results are stored in a format suitable for comparison.
-
-#### Example Usage:
-
-- **SpaCy NER**:
-    ```python
-    nlp_spacy = spacy.load('en_core_web_sm')
-    
-    def spacy_model(doc):
-        doc_spacy = nlp_spacy(doc)
-        spacy_entities = [(ent.text, ent.label_) for ent in doc_spacy.ents]
-        return spacy_entities
-    ```
-
-- **Stanza NER**:
-    ```python
-    nlp_stanza = stanza.Pipeline(lang='en', processors='tokenize,ner')
-    
-    def stanza_model(doc):
-        doc_stanza = nlp_stanza(doc)
-        stanza_entities = [(ent.text, ent.type) for ent in doc_stanza.ents]
-        return stanza_entities
-    ```
-
-### Clustering and Visualization
-
-The notebook applies K-means clustering on the preprocessed data and visualizes the clusters using PCA.
-
-#### Example Usage:
-
-```python
-from sklearn.decomposition import PCA
-pca = PCA(n_components=2)
-X_pca = pca.fit_transform(X_train_vec.toarray())
-
-plt.figure(figsize=(10, 8))
-plt.scatter(X_pca[:, 0], X_pca[:, 1], c=predicted_labels, cmap='viridis')
-plt.xlabel('PCA Component 1')
-plt.ylabel('PCA Component 2')
-plt.title('Clusters Visualization after K-means Clustering with PCA')
-plt.colorbar(label='Cluster')
-plt.savefig('Clusters_K-means_PCA.png')
-plt.show()
-```
-
-### Metrics and Evaluation
-
-The notebook calculates both supervised and unsupervised metrics to evaluate the clustering results.
-
-#### Example Usage:
-
-```python
-from sklearn import metrics
-
-print("Homogeneity: %0.3f" % metrics.homogeneity_score(y_train, predicted_labels))
-print("Completeness: %0.3f" % metrics.completeness_score(y_train, predicted_labels))
-print("V-measure: %0.3f" % metrics.v_measure_score(y_train, predicted_labels))
-print("Adjusted Rand-Index: %.3f" % metrics.adjusted_rand_score(y_train, predicted_labels))
-print("Silhouette Coefficient: %0.3f" % metrics.silhouette_score(X_train_vec, predicted_labels))
-```
-
-## Important Notes
-- **Time-Consuming Operations**: Some operations, particularly those involving large datasets and batch processing, can be time-consuming.
-
-
-
-
-
+Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on GitHub.
