@@ -98,13 +98,26 @@ This project aims to compare the performance of two Natural Language Processing 
    ```bash
    git clone https://github.com/Mery-e/datascienceproject/tree/main
    cd text-comparison-clustering
+   ```
 
 2. Install Dependencies
 To install the required dependencies, run the following command:
 
 ```bash
-pip install -r requirements.txt
 
+pip install -r requirements.txt
+```
+
+ ## Requirements
+- Python 3.x
+- pandas
+- scikit-learn
+- matplotlib
+- seaborn
+- keras
+- trankit
+- stanza
+- numpy
 
 
 ### Contributions
