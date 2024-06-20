@@ -70,8 +70,8 @@ This project aims to compare the performance of two Natural Language Processing 
 ### Named Entity Recognition (NER)
 
 - *Processing*: 
-  - Implemented functions to perform NER using Spacy and Stanza on biographies.
-  - Results stored in a Pandas dataframe or JSON file.
+  - Implemented functions to perform NER using Spacy and Stanza on biographies. First tokenizing with Spacy model. 
+  - Results stored in a Pandas dataframe.
 
 ### NER Analysis by Entity Type
 
@@ -79,8 +79,8 @@ This project aims to compare the performance of two Natural Language Processing 
   - Conducted detailed comparison of NER results between Spacy and Stanza.
   - Reported statistics on agreement, partial agreement, and disagreement per category and package.
   - Visualized comparison results.
-
-### NER Verification Against Knowledge Graph
+  
+  ## Part 3: NER Verification Against Knowledge Graph
 
 - *Verification*: 
   - Developed functions to verify predicted NEs against the knowledge graph for each person.
@@ -100,26 +100,6 @@ This project aims to compare the performance of two Natural Language Processing 
    git clone https://github.com/Mery-e/datascienceproject/tree/main
    cd text-comparison-clustering
    ```
-
-2. Install Dependencies
-To install the required dependencies, run the following command:
-
-```bash
-
-pip install -r requirements.txt
-```
-
- ## Requirements
-- Python 3.x
-- pandas
-- scikit-learn
-- matplotlib
-- seaborn
-- keras
-- trankit
-- stanza
-- numpy
-
 
 ### Contributions
 Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on GitHub.
